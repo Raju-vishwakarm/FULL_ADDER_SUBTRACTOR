@@ -38,18 +38,90 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+**FULL ADDER**
+![Screenshot 2025-01-02 220018](https://github.com/user-attachments/assets/fbbf9ae2-fccc-4eee-bf57-478698433585)
+
+**FULL SUBSTRACTOR**
+![Screenshot 2025-01-02 220133](https://github.com/user-attachments/assets/81b3cb7b-5cba-4493-b792-d075ef443323)
+
 **Procedure**
+write the detailed procedure here
 
-Write the detailed procedure here
+1 type the program in quartes software.
 
-**Program:**
+2 compile and run rhe program .
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+3 generate the RTL schematic and save the logic diagram.
+
+4 create nodes for inputs and outputs to generate the timing diagram .
+
+5 for different input combinations generate the timing diagram
+
+Program:
+
+**FULL ADDER**
+
+module fulladder(
+
+input a,b,c,
+
+output sum,carry);
+
+wire w1,w2,w3;
+
+assign sum=a^b^c; assign w1=a&b;
+
+assign w2=b&c;
+
+assign w3=c&a;
+
+assign carry=w1|w2|w3;
+
+endmodule
+
+**FULL SUBRACTOR**
+
+module fullsub(a,b,c,diff,borr);
+
+input a,b,c;
+
+output diff,borr;
+
+wire w1,w2,w3,w4,w5,w6;
+
+xor g1(diff,a,b,c);
+
+and g2(w4,w1,b);
+
+and g3(w5,w1,b);
+
+nd g4(w6,b,c);
+
+or g5(borr,w4,w5,w6);
+
+endmodule
+
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:D.Raju RegisterNumber:24003778
 */
 
 **RTL Schematic**
 
+**FULL ADDER**
+![Screenshot 2025-01-02 214855](https://github.com/user-attachments/assets/99197db9-69e5-4cb7-a0d9-eb602ba01c51)
+
+**FULL SUBSTRACTOR**
+
+![Screenshot 2025-01-02 214912](https://github.com/user-attachments/assets/922338ef-231f-4a7b-8462-27cfde372e61)
+
 **Output Timing Waveform**
+
+**FULL ADDER**
+![Screenshot 2025-01-02 214941](https://github.com/user-attachments/assets/868d791d-90ae-4427-911a-38ca58f594c5)
+
+**FULL SUBSTRACTOR**
+
+![Screenshot 2025-01-02 214958](https://github.com/user-attachments/assets/025d3312-e6bb-4e83-86cd-01556a2248dc)
+
 
 **Result:**
 
